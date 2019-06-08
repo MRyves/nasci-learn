@@ -1,0 +1,34 @@
+<div class="row mt-4 justify-content-center">
+  <div class="col-6">
+    <div class="card card-body border-light text-center">
+      <form (ngSubmit)="submitForm()" [formGroup]="authForm" class="form-signin">
+        <fieldset [disabled]="isSubmitting">
+          <img class="mb-4" src="https://placeholder.pics/svg/72x72/DEDEDE/555555/A" alt="" width="72" height="72">
+          <h3 class="card-title">{{title}}</h3>
+          <label for="username" class="sr-only">Username</label>
+          <input *ngIf="authType == 'register'" [formControlName]="['username']" class="form-control" id="username"
+                 placeholder="Username" required type="text">
+          <label for="email" class="sr-only">Email address</label>
+          <input [formControlName]="['email']" autofocus class="form-control" id="email"
+                 placeholder="Email address" required type="email">
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input [formControlName]="['password']" class="form-control" id="inputPassword" placeholder="Password"
+                 required type="password">
+          <label for="passwordRetype" class="sr-only">Password retype</label>
+          <input *ngIf="authType == 'register'" [formControlName]="['password-retype']" class="form-control" id="passwordRetype"
+                 placeholder="Password Retype" required type="password">
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!authForm.valid">Sign in</button>
+          <small id="emailHelp" class="form-text text-muted">Don't have an account yet?
+            <a [routerLink]="['/register']">Register!</a>
+          </small>
+          <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
