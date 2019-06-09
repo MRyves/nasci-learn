@@ -48,6 +48,7 @@ export class UserService {
   }
 
   purgeAuth() {
+    console.log('purged auth');
     // Remove JWT from localstorage
     this.jwtService.destroyToken();
     // Set current user to an empty object

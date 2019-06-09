@@ -1,0 +1,57 @@
+[
+  {
+    // currently no server storage implemented thus this rest call leads to internal-server error
+    "httpRequest": {
+      "method": "GET",
+      "path": "/users"
+    },
+    "httpResponse": {
+      "statusCode": 501
+    }
+  },
+  {
+    // rest-api to register new user
+    "httpRequest": {
+      "method": "POST",
+      "path": "/users"
+    },
+    "httpResponse": {
+      "headers": {
+        "content-type": [
+          "application/json"
+        ]
+      },
+      "body": "{\"user\": {\"email\":\"register@agnasci.com\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJlZ2lzdGVyQGFnbmFzY2kuY29tIiwidXNlcm5hbWUiOiJSZWdpc3RlcmVkVXNlciIsImJpbyI6IlRoaXMgdXNlciB3YXMgY3JlYXRlZCBieSB0aGUgcmVnaXN0ZXIgcmVzdC1hcGkiLCJpbWFnZSI6InNvbWVCaW5hcnlEYXRhIn0.YbtZHwv11ENYKxd9yutNSSyKSDZhGA0xXQdjd0r2Tng\",\"username\":\"RegisteredUser\",\"bio\":\"This user was created by the register rest-api\",\"image\":\"someBinaryData\"}}"
+    }
+  },
+  {
+    // rest-api to login a user
+    "httpRequest": {
+      "method": "POST",
+      "path": "/users/login"
+    },
+    "httpResponse": {
+      "headers": {
+        "content-type": [
+          "application/json"
+        ]
+      },
+      "body": "{\"user\": {\"email\":\"login@agnasci.com\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvZ2luQGFnbmFzY2kuY29tIiwidXNlcm5hbWUiOiJMb2dnZWRJblVzZXIiLCJiaW8iOiJUaGlzIHVzZXIgd2FzIGNyZWF0ZWQgYnkgdGhlIGxvZ2luIHJlc3QtYXBpIiwiaW1hZ2UiOiJzb21lQmluYXJ5RGF0YSJ9.PgQ8x9R9QwnMvDa1wVuACYIhyGBH6ArMKR5wlGcFH94\",\"username\":\"LoggedInUser\",\"bio\":\"This user was created by the login rest-api\",\"image\":\"someBinaryData\"}}"
+    }
+  },
+  {
+    // rest-api to update a user
+    "httpRequest": {
+      "method": "PUT",
+      "path": "/users"
+    },
+    "httpResponse": {
+      "headers": {
+        "content-type": [
+          "application/json"
+        ]
+      },
+      "body": "{\"user\": {\"email\":\"updated@agnasci.com\",\"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvZ2luQGFnbmFzY2kuY29tIiwidXNlcm5hbWUiOiJMb2dnZWRJblVzZXIiLCJiaW8iOiJUaGlzIHVzZXIgd2FzIGNyZWF0ZWQgYnkgdGhlIGxvZ2luIHJlc3QtYXBpIiwiaW1hZ2UiOiJzb21lQmluYXJ5RGF0YSJ9.PgQ8x9R9QwnMvDa1wVuACYIhyGBH6ArMKR5wlGcFH94\",\"username\":\"UpdateUser\",\"bio\":\"This user was created and then update with the rest-api\",\"image\":\"someBinaryData\"}}"
+    }
+  }
+]
